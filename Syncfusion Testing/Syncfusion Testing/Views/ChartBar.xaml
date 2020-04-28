@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:local="clr-namespace:Syncfusion_Testing.ViewModels"
+             x:Class="Syncfusion_Testing.Views.ChartBar">
+    <ContentPage.Content>
+        <StackLayout>
+            <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <chart:SfChart.BindingContext>
+                    <local:DataModel/>
+                </chart:SfChart.BindingContext>
+                <chart:SfChart.Title>
+                    <chart:ChartTitle Text="Efficiency of oil-fired power production" TextAlignment="Start" TextColor="Blue"/>
+                </chart:SfChart.Title>
+
+                <chart:SfChart.PrimaryAxis>
+                    <chart:CategoryAxis  LabelPlacement="BetweenTicks">
+                        <chart:CategoryAxis.Title >
+                            <chart:ChartAxisTitle Text="Month"/>
+                        </chart:CategoryAxis.Title>
+                    </chart:CategoryAxis>
+                </chart:SfChart.PrimaryAxis>
+
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis>
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="Demands"/>
+                        </chart:NumericalAxis.Title>
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+                <chart:SfChart.Series>
+                    <chart:BarSeries ItemsSource="{Binding Demands}" Label="2010 yr" XBindingPath="Demand" YBindingPath="Year2010" EnableTooltip="True">
+                        <chart:BarSeries.DataMarker>
+                            <chart:ChartDataMarker MarkerWidth="10" MarkerHeight="10" />
+                            <!--ShowLabel="False" ShowMarker="True"/>-->
+                        </chart:BarSeries.DataMarker>
+                    </chart:BarSeries>
+                    <chart:BarSeries ItemsSource="{Binding Demands}" Label="2011 yr" XBindingPath="Demand" YBindingPath="Year2011" EnableTooltip="True">
+                        <chart:BarSeries.DataMarker>
+                            <chart:ChartDataMarker/>
+                        </chart:BarSeries.DataMarker>
+                    </chart:BarSeries>
+                </chart:SfChart.Series>
+            </chart:SfChart>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

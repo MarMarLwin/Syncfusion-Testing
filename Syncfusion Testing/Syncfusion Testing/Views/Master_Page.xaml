@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Syncfusion_Testing.Views.Master_Page"
+             xmlns:pages="clr-namespace:Syncfusion_Testing.Views">
+  <MasterDetailPage.Master>
+        <ContentPage Title="Master Page">
+         <ScrollView>
+            <StackLayout BackgroundColor="CornflowerBlue">
+                    <StackLayout HorizontalOptions="FillAndExpand"   
+                             HeightRequest="130" BackgroundColor="#0b225a"
+                             Padding="10,60,20,15">
+
+
+                        <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"
+                                 Padding="10,35,15,15">
+
+                            <Image Source="clipboard.png"
+                            HorizontalOptions="StartAndExpand" 
+                            WidthRequest="60"/>
+
+                            <StackLayout Orientation="Vertical" Padding="0,0,0,0">
+
+                                <Image Source="xamarin_logo.png"
+                                       VerticalOptions="CenterAndExpand" 
+                                                                HeightRequest="150"
+                                                                WidthRequest="150"/>
+
+                            </StackLayout>
+
+                        </StackLayout>
+                        </StackLayout>
+                    <StackLayout Padding="20">
+
+                    <StackLayout x:Name="MenuList" Padding="0,10,0,0">
+
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Orientation="Horizontal" 
+                                                        HorizontalOptions="FillAndExpand"
+                                                        VerticalOptions="Center"
+                                                        Padding="0,5,0,5">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                                                                   CommandParameter="{Binding OptionCode}" />
+                                    </StackLayout.GestureRecognizers>
+
+                                    <Image  Source="{Binding iconImage}"
+                                                                HorizontalOptions="Start"
+                                                                VerticalOptions="Center" Margin="15,0,5,2"
+                                                                HeightRequest="25"
+                                                                WidthRequest="25"/>
+                                    <Label  Text="{Binding OptionName}" 
+                                                              
+                                                                FontSize="16" Margin="10,0,5,2"
+                                                                HorizontalOptions="Start" VerticalOptions="Center"
+                                                                TextColor="DarkBlue"/>
+
+                                </StackLayout>
+
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+
+
+
+                    </StackLayout>
+
+
+                    
+                </StackLayout>
+
+            </StackLayout>
+            </ScrollView>
+        </ContentPage>
+    </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <NavigationPage>
+      <x:Arguments>
+        <pages:ChartTabbedPage />
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>

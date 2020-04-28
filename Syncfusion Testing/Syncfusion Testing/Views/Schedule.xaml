@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:Syncfusion_Testing.ViewModels"
+             xmlns:schedule="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
+             x:Class="Syncfusion_Testing.Views.Schedule" Title="Schedule">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Label Text="My Schedule"
+                VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand" />
+                <schedule:SfSchedule x:Name="schedule" ShowResourceView="True" AllowAppointmentDrag="true"
+                                     TimeInterval="60" ScheduleView ="WorkWeekView"   
+                                     VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand">
+                    <!--DataSource="{Binding Meetings}"-->
+                    <schedule:SfSchedule.BindingContext>
+                        <local:MeetingViewModel/>
+                    </schedule:SfSchedule.BindingContext>
+                    <schedule:SfSchedule.ViewHeaderStyle>
+                    <schedule:ViewHeaderStyle
+				BackgroundColor="#009688" 
+				DayTextColor="#FFFFFF" 
+				DateTextColor="#FFFFFF" 
+				DayFontFamily="Arial" 
+				DateFontFamily="Arial">
+                </schedule:ViewHeaderStyle>
+                </schedule:SfSchedule.ViewHeaderStyle>
+                
+                <schedule:SfSchedule.WorkWeekViewSettings>
+                    <schedule:WorkWeekViewSettings WorkStartHour="9" WorkEndHour="18">
+                        <schedule:WorkWeekViewSettings.WorkWeekLabelSettings>
+                            <schedule:WorkWeekLabelSettings DateFormat="dd" TimeFormat="hh:mm">
+                                <schedule:WorkWeekLabelSettings.DayFormat>
+                                    <OnPlatform x:TypeArguments="x:String" iOS="EEEE" Android="EE" WinPhone="dddd" />
+                                </schedule:WorkWeekLabelSettings.DayFormat>
+                               
+                            </schedule:WorkWeekLabelSettings>
+                        </schedule:WorkWeekViewSettings.WorkWeekLabelSettings>
+                    </schedule:WorkWeekViewSettings>
+                </schedule:SfSchedule.WorkWeekViewSettings>
+            </schedule:SfSchedule>
+           <!--====================== TimeLine======================================-->
+
+             <!--<Grid x:Name="grid_layout">
+                        <Grid.BindingContext>
+                            <local:TimetableViewModel/>
+                        </Grid.BindingContext>
+                        <schedule:SfSchedule BindingContext="{Binding}" TimeIntervalHeight="-1"
+              x:Name="Schedule" ScheduleView="DayView"
+              DataSource="{Binding Appointments}"
+              HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand" >
+                            <schedule:SfSchedule.DayViewSettings>
+                                <schedule:DayViewSettings
+                   StartHour="9"
+                   EndHour="16">
+                                </schedule:DayViewSettings>
+                            </schedule:SfSchedule.DayViewSettings>
+                            --><!--<schedule:SfSchedule.Behaviors>
+                                <local:TimetableBehavior />
+                            </schedule:SfSchedule.Behaviors>--><!--
+                        </schedule:SfSchedule>
+                    </Grid>-->
+                   </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

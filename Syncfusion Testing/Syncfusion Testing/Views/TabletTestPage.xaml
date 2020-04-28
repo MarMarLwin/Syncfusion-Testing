@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Syncfusion_Testing.Views.TabletTestPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Grid.Style>
+                        <OnIdiom x:TypeArguments="Style" Tablet="{StaticResource TabletGridStyle}"
+                             Phone="{StaticResource PhoneGridStyle}" />
+                    </Grid.Style>
+                    <Frame Grid.Row="0" Grid.Column="0" HasShadow="False"
+                       BackgroundColor="{StaticResource NavigationPrimary}"
+                       CornerRadius="5" Padding="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer  />
+                        </Frame.GestureRecognizers>
+                        <StackLayout>
+                            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="0,20,0,0">
+                                <Image Source="about_you.png"
+                                   HeightRequest="50"
+                                   WidthRequest="50">
+
+                                </Image>
+                            </StackLayout>
+                            <Label Text="ယခုသတင်းပို့မည်"
+                               TextColor="White"
+                              
+                               
+                               FontSize="13"
+
+                               Padding="0,20,0,20"
+                               HorizontalOptions="CenterAndExpand"></Label>
+                            <BoxView HeightRequest="3" BackgroundColor="{StaticResource NavigationPrimary}" VerticalOptions="EndAndExpand"></BoxView>
+                        </StackLayout>
+
+
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="1" HasShadow="False"
+                       BackgroundColor="{StaticResource NavigationPrimary}" CornerRadius="5" Padding="0">
+                       
+                        <StackLayout>
+                            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="0,20,0,0">
+                                <Image Source="location.png"
+                                   HeightRequest="50"
+                                   WidthRequest="50">
+
+                                </Image>
+                            </StackLayout>
+                            <Label Text="သိမ်းဆည်းထားသော နေရာများ"
+                               TextColor="White"
+                               
+                              FontSize="13"
+                               HorizontalTextAlignment="Center"></Label>
+                            <BoxView HeightRequest="3" BackgroundColor="{StaticResource NavigationPrimary}" VerticalOptions="EndAndExpand"></BoxView>
+                        </StackLayout>
+
+                    </Frame>
+                    <Frame Grid.Row="1" Grid.Column="0" HasShadow="False"
+                       BackgroundColor="{StaticResource NavigationPrimary}" CornerRadius="5" Padding="0">
+                       
+                        <StackLayout >
+                            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="0,20,0,0">
+                                <Image Source="list_of_resource.png"
+                                   HeightRequest="50"
+                                   WidthRequest="50">
+
+                                </Image>
+                            </StackLayout>
+                            <Label Text="သတင်းပို့ မှတ်တမ်းများ"
+                               TextColor="White"
+                               
+                               
+                              FontSize="13"
+                               HorizontalOptions="CenterAndExpand"></Label>
+                            <BoxView HeightRequest="3" BackgroundColor="{StaticResource NavigationPrimary}" VerticalOptions="EndAndExpand"></BoxView>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="1" Grid.Column="1" HasShadow="False"
+                       BackgroundColor="{StaticResource NavigationPrimary}" CornerRadius="5" Padding="0">
+                       
+                        <StackLayout>
+                            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="0,20,0,0">
+                                <Image Source="news_icon.png"
+                                   HeightRequest="50"
+                                   WidthRequest="50">
+
+                                </Image>
+                            </StackLayout>
+                            <Label Text="အခြားသူများစာရင်း"
+                               TextColor="White" 
+                             
+                               FontSize="13"
+                               HorizontalOptions="CenterAndExpand"></Label>
+                            <BoxView HeightRequest="3" BackgroundColor="{StaticResource NavigationPrimary}" VerticalOptions="EndAndExpand"></BoxView>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+
+
+             
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

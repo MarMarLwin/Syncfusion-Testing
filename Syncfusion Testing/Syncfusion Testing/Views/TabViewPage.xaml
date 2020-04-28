@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+             x:Name="root"  
+             xmlns:local="clr-namespace:Syncfusion_Testing.Views"
+             x:Class="Syncfusion_Testing.Views.TabViewPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <tabView:SfTabView  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#f6f6f6" x:Name="tabView" SelectionChanged="tabView_SelectionChanged" DisplayMode="ImageWithText" EnableSwiping="False" TabHeaderPosition="Bottom">
+                <tabView:SfTabItem Title="Call" ImageSource="phone.png">
+                    <tabView:SfTabItem.Content>
+                        <Grid BackgroundColor="White" x:Name="AllContactsGrid" >
+                            <ListView x:Name="ContactListView" 
+                                  ItemsSource="{Binding ContactList}"
+                                  RowHeight="75">
+                                <ListView.BindingContext>
+                                    <local:ContactsViewModel />
+                                </ListView.BindingContext>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Orientation="Vertical" Margin="30,0,0,0">
+                                                <Label 
+                                                Text="{Binding Name}"
+                                                FontSize="24"  />
+                                                <Label 
+                                                Text="{Binding Number}" 
+                                                FontSize="20" 
+                                                TextColor="LightSlateGray" />
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+                <tabView:SfTabItem Title="Favorites" ImageSource="star.png"  >
+                    <tabView:SfTabItem.Content>
+                        <Grid BackgroundColor="LightPink" x:Name="FavouritesGrid" >
+                            <ListView x:Name="FavroiteListView" 
+                                  ItemsSource="{Binding ContactList}"
+                                  RowHeight="75">
+                                <ListView.BindingContext>
+                                    <local:ContactsViewModel />
+                                </ListView.BindingContext>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Orientation="Vertical" Margin="30,0,0,0">
+                                                <Label 
+                                                Text="{Binding Name}"
+                                                FontSize="24"  />
+                                                <Label 
+                                                Text="{Binding Number}" 
+                                                FontSize="20" 
+                                                TextColor="LightSlateGray" />
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+                <tabView:SfTabItem Title="Contacts" ImageSource="person.png">
+                    <tabView:SfTabItem.Content>
+                        <Grid BackgroundColor="Wheat" x:Name="ContactsGrid" >
+                            <ListView x:Name="PhoneListView" 
+                                  ItemsSource="{Binding ContactList}"
+                                  RowHeight="75">
+                                <ListView.BindingContext>
+                                    <local:ContactsViewModel />
+                                </ListView.BindingContext>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Orientation="Vertical" Margin="30,0,0,0">
+                                                <Label 
+                                                Text="{Binding Name}"
+                                                FontSize="24"  />
+                                                <Label 
+                                                Text="{Binding Number}" 
+                                                FontSize="20" 
+                                                TextColor="LightSlateGray" />
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+            </tabView:SfTabView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:richtextEditor="clr-namespace:Syncfusion.XForms.RichTextEditor;assembly=Syncfusion.SfRichTextEditor.XForms"
+             x:Class="Syncfusion_Testing.Views.RichTextEditor" Title="RichTextEditor">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="46"/>
+                </Grid.RowDefinitions>
+                <BoxView BackgroundColor="Gray" VerticalOptions="End" HeightRequest="0.5" Grid.Row="0"/>
+
+            </Grid>
+            <Grid BackgroundColor="Wheat" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <richtextEditor:SfRichTextEditor x:Name="RTE" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
+                                                     ImageInsertCommand="{Binding ImageCommand}" FontButtonCommand="{Binding FontCommand}"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
