@@ -16,7 +16,7 @@ namespace Syncfusion_Testing
             DependencyService.Register<MockDataStore>();
            // MainPage = new MainPage();
             //MainPage = new NavigationPage(new BusyIndicator());
-            MainPage = new NavigationPage(new TabletTestPage());
+           /// MainPage = new NavigationPage(new TabletTestPage());
         }
 
         public App(String databasepath)
@@ -24,7 +24,7 @@ namespace Syncfusion_Testing
             InitializeComponent();
             DependencyService.Register<MockDataStore>();
             // MainPage = new NavigationPage(new BusyIndicator());
-            MainPage = new NavigationPage(new TabletTestPage());
+            MainPage = new NavigationPage(new FacebookLogin());
             this.databasePath = databasepath;
         }
 

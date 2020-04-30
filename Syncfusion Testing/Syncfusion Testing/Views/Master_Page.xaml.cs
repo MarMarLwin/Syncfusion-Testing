@@ -52,7 +52,7 @@ namespace Syncfusion_Testing.Views
 
         protected override bool OnBackButtonPressed()
         {
-            Device.BeginInvokeOnMainThread(async () =>
+            Xamarin.Forms.Device.BeginInvokeOnMainThread(async () =>
             {
                 var result = await this.DisplayAlert("Alert!", "Are yor sure want to exit?", "Yes", "No");
                 if (result)

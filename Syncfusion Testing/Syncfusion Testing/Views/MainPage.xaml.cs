@@ -64,7 +64,7 @@ namespace Syncfusion_Testing.Views
             {
                 Detail = newPage;
 
-                if (Device.RuntimePlatform == Device.Android)
+                if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.Android)
                     await Task.Delay(50);
 
                 IsPresented = false;
